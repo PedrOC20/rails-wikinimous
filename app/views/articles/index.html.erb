@@ -2,10 +2,16 @@
 
 <ul>
   <% @articles.each do |article| %>
-    <li>
-      <h3><%= link_to "#{article.title}", article %></h3>
-      <p><%= link_to 'Delete Article', article, method: :delete %></p>
-    </li>
+      <div class="delete-align">
+        <li>
+          <h3 class="delete">
+            <%= link_to "#{article.title}", article %>
+            <%= link_to article, method: :delete do %>
+              <i class="fas fa-trash-alt"></i>
+            <% end %>
+          </h3>
+        </li>
+      </div>
   <% end %>
 </ul>
 
